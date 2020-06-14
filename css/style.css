@@ -1,0 +1,238 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  background: linear-gradient(135deg, rgb(0, 0, 0) 30%, #ff006a 100%)
+  fixed;
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+body {
+  color:white;
+}
+
+/* Top middle text */
+.music_mute {
+  color:white;
+  text-align:center;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: music_mute 3s;
+}
+
+/* "spacebar" text color */
+.music_mute b {
+  color: rgb(184, 186, 187);
+}
+
+/* Animation for top middle text */
+@keyframes music_mute {
+  from {
+      opacity: 0.1;
+      transform: translateY(-80px);
+  }
+
+  to { 
+      transform: translateY(0px);
+  }
+}
+
+/* Everything in the middle */
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.image {
+  border-radius: 10px;
+}
+
+.spacer {
+  margin-top: 50px;
+  padding-left: 2.5%;
+  color: white;
+}
+
+.server-name {
+  font-size: 40px;
+  animation: travel 4s;
+}
+
+@keyframes travel {
+  from {
+      opacity: 0.01;
+      transform: translateY(130px);
+  }
+
+  to { 
+      transform: translateY(0px);
+  }
+}
+
+/* Info "box" under the server name */
+
+.info {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  animation: under 10s; 
+}
+
+/* Background Effects */
+.img {
+  position: absolute;
+  height: 100000px;
+  width: 100000px;
+  top: -8500px;
+  left: -8000px;
+  animation-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750);
+  animation-name: float;
+  animation-iteration-count: infinite;
+}
+
+#img-1 {
+  opacity: 0.25;
+  background: url('https://image.ibb.co/jcTvpv/dust1.jpg');
+  background-repeat: repeat;
+  animation-duration: 600s;
+}
+
+#img-2 {
+  opacity: 0.2;
+  background: url('https://image.ibb.co/goU1Uv/dust2.jpg');
+  background-repeat: repeat;
+  animation-duration: 450s;
+}
+
+#img-3 {
+  opacity: 0.15;
+  background: url('https://image.ibb.co/cymRwa/dust3.jpg');
+  background-repeat: repeat;
+  animation-duration: 350s;
+}
+
+/* Background animation */
+
+@keyframes twinkle {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  30% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.75;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    transform: translate(175px, 100px);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+      transform:translate(8000px, 4000px);
+  }
+}
+
+/* remove this if you'd like the debug text top left in the corner */
+.log {
+  color: transparent;
+}
+
+/* Loading bar */
+.loading-container
+{
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: 10%;
+
+    z-index: 5;
+
+    color: #fff;
+
+    font-family: Arial;
+}
+
+
+.loading-bar-container
+{
+    width: 100%;
+    background-color: rgba(140, 140, 140, .9);
+    height: 20px;
+
+    margin-left: 2px;
+    margin-right: 3px;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    border-radius: 6px;
+    padding: 5px;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    white-space: nowrap;
+}
+
+.loading-bar
+{
+    width: 0%;
+    height: 20px;
+    border-radius: 3px;
+
+    background-size: 30px 30px;      
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent); 
+    -webkit-animation: animate-stripes 3s linear infinite;
+    
+    display: none;
+
+    transition: width 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.bgcolor-first 
+{
+    background-color: rgba(104, 104, 104, 0.5)
+}
+
+.bgcolor-second 
+{
+    background-color: rgb(255, 13, 86)
+}
+
+.bgcolor-third 
+{
+    background-color: rgb(255, 13, 86)
+}
+
+.bgcolor-fourth 
+{
+    background-color: rgb(151, 5, 102)
+}
+
+@keyframes animate-stripes {
+  0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+}

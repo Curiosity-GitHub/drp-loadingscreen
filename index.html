@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>FiveM Loadingscreen [DRP]</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Top left text -->
+        <p>| DRP Framework |</p>
+
+        <!-- Top middle text -->
+        <h1 class="music_mute"> Use <b>spacebar</b> to mute music</h1>
+
+        <!-- Background -->
+        <ul id="scene" data-friction-x="0.03"data-friction-y="0.05">
+            <li class="layer" id="specks" data-depth="0.1"></li>
+            <liclass="layer" id="layer-1" data-depth="0.15">
+                <div class="img" id="img-1"></div>
+            </li>
+            <li class="layer" id="layer-2" data-depth="0.25">
+                <div class="img" id="img-2"></div>
+            </li>
+            <li class="layer" id="layer-3" data-depth="0.45">
+                <div class="img" id="img-3"></div>
+            </li>
+        </ul>
+        <script  src="./script.js"></script>
+
+        <!-- Everything in the middle -->
+        <div class="middle">
+            <img class="image" src="img/logo.png" width="200" height="200">
+            <div class="spacer"></div>
+            <h1 class="server-name">Server Name</h1>
+            <div class="spacer"></div>
+            <div class="info">
+                <p> Owner: <b>Name</b></p>
+                <p class="spacer"></p>
+                <p class="divider">|</p>
+                <p class="spacer"></p>
+                <p> Discord: <b>LINK</b></p>
+                <p class="spacer"></p>
+                <p class="divider">|</p>
+                <p class="spacer"></p>
+                <p> Max Players: <b>48</b></p>
+            </div>
+        </div>
+
+        <!-- Loading bar -->
+        <!-- From: https://github.com/KingRich-TLFRP/tfrploadingv2 -->
+        <div id="debug" class="log log-top-right"></div>
+        <div class="loading-container">
+
+            <div class ="loading-labels">
+                <div id="INIT_BEFORE_MAP_LOADED-label" class="color-first"></div>
+                <div id="MAP-label" class="color-second"></div>
+                <div id="INIT_AFTER_MAP_LOADED-label" class="color-third"></div>
+                <div id="INIT_SESSION-label" class="color-fourth"></div>
+            </div>
+            <div class="loading-bar-container">
+                <div id="INIT_BEFORE_MAP_LOADED-bar" class="loading-bar bgcolor-first"></div>
+                <div id="MAP-bar" class="loading-bar bgcolor-second"></div>
+                <div id="INIT_AFTER_MAP_LOADED-bar" class="loading-bar bgcolor-third"></div>
+                <div id="INIT_SESSION-bar" class="loading-bar bgcolor-fourth"></div>
+            </div>
+        </div>
+        <script type="text/javascript" src="script.js"></script>
+
+        <!-- Music -->
+        <audio id="leson" src="music/loading.ogg" autoplay="true" hidden="true" loop="true"/>
+        <script>
+    
+            var play = false;
+            var myAudio = document.getElementById("leson");
+            
+            myAudio.volume = 0.05;
+    
+            function onKeyDown(event) {
+                    switch (event.keyCode) {
+                        case 32: //SpaceBar                    
+                            if (play) {
+                                myAudio.pause();
+                                play = false;
+                            } else {
+                                myAudio.play();
+                                play = true;
+                            }
+                            break;
+                    }
+            return false;
+            }
+    
+            window.addEventListener("keydown", onKeyDown, false);
+        </script>
+
+    </body>
+</html>
